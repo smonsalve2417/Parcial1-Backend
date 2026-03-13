@@ -1,5 +1,5 @@
 import express from "express";
-import punto1 from "./routes/punto1.js";
+import punto1 from "./routes/puntos.js";
 const app = express();
 
 app.use(express.json());

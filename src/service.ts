@@ -57,7 +57,7 @@ async function gettop(limit: number) {
 
 export async function getPokemonName(nombre: string):Promise<{ insight: insights; code: number }> { 
   
-  const insight: insights = {
+  let insight: insights =  {
       name: "...", id: 1, types: [],
       baseStats: { hp: 0, attack: 0, defense: 0, specialAttack: 0, specialDefense: 0, total: 0, speed: 0 },
       evolution: {

@@ -1,5 +1,5 @@
 import express from "express";
-import { main } from "../service.js";
+
 import { getPokemonName } from "../service.js";
 
 //const Task = require("../models/Task");
@@ -16,9 +16,9 @@ router.post("/", async (req, res) => {
 });
 
 
-router.get("/insights/:name", async (req, res) => {
-    const name = req.params.name;
-    
+router.get("/pokemon/insights", async (req, res) => {
+    //const name = req.params.name;
+    /*
     if (name.length === 0) {
         return res.status(400).json({
             error: "No se ha proporcionado un nombre en la solicitud"
@@ -26,10 +26,10 @@ router.get("/insights/:name", async (req, res) => {
     }
     const response = await getPokemonName(name);
     if (response.code !== 200) {
-        return res.status(response.code).json({ error: response.name });
+        return res.status(response.code).json({ error: "" });
     }
-
-    res.status(200).json({ name: response.name });
+*/
+    res.status(200).json(null );
 });
 
 

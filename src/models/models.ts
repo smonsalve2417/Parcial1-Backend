@@ -2,6 +2,7 @@
 export interface PokemonResponse {
   name: string;
   id: number;
+  types:types[]
 
 }
 

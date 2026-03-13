@@ -1,14 +1,14 @@
 {
   // Visit https://aka.ms/tsconfig to read more about this file
   "compilerOptions": {
-     "rootDir": "./src",
-     "outDir": "./dist",
-     "noEmitOnError": true,
+    // File Layout
+    "rootDir": "./src", 
+    "outDir": "./dist", 
+    "noEmitOnError": true,
 
     // Environment Settings
     // See also https://aka.ms/tsconfig/module
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
+    "module": "nodenext",
     "target": "esnext",
     "types": [],
     // For nodejs:

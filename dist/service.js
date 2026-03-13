@@ -34,6 +34,13 @@ export async function main() {
         });
         return acumulator;
     }, []);
-    console.log(datosnorm[0]);
 }
-//# sourceMappingURL=index.js.map
+export async function getPokemonName(nombre) {
+    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${nombre}`);
+    const data = await response.json();
+    if (response.status !== 200) {
+        return { name: "Pokemon no encontrado", code: response.status };
+    }
+    return { name: data.name, code: response.status };
+}
+//# sourceMappingURL=service.js.map

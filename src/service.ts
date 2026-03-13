@@ -1,4 +1,5 @@
-import type { Monster } from "./models/Monster.ts";
+import type { Monster } from "./models/Monster.js";
+import type { PokemonResponse } from "./models/Monster.js";
 
 async function gettop(limit: number) {
   const response = await fetch(
@@ -14,7 +15,7 @@ async function gettop(limit: number) {
 }
 
 
-async function main() {
+export async function main() {
   const datos = await gettop(5);
 
   const datosnorm = datos.reduce<Monster[]>((acumulator,currentValue)=>{
@@ -50,10 +51,17 @@ async function main() {
         return acumulator;     
   }, [])
   
-  console.log(datosnorm[0]);
 }
 
 
+export async function getPokemonName(nombre: string):Promise<{ name: string; code: number }> { 
+  const response = await fetch(
+    `https://pokeapi.co/api/v2/pokemon/${nombre}`
+  );
+  const data: PokemonResponse = await response.json();
+  if (response.status !== 200) { 
+    return { name: "Pokemon no encontrado", code: response.status };
+  }
+  return { name: data.name, code: response.status };
 
-
-main();
+}

@@ -22,4 +22,22 @@ export interface Stats {
     wis: number;
     cha: number;
 }
+export interface PokemonResponse {
+    name: string;
+    id: number;
+}
+export interface Pokemon {
+    name: string;
+    id: number;
+    types: string[];
+}
+export interface PokemonStats {
+    hp: number;
+    attack: number;
+    defense: number;
+    speciaAttack: number;
+    specialDefense: number;
+    speed: number;
+    suma: number;
+}
 //# sourceMappingURL=Monster.d.ts.map
